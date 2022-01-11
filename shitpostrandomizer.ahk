@@ -2,7 +2,7 @@
 #SingleInstance, Force
 SetWorkingDir %A_ScriptDir%
 SetKeyDelay, 0
-
+ComObjCreate("SAPI.SpVoice").Speak("Pronto para randomizar seus shitposts.")
 
 global NumeroDeShitpost = 41
 
@@ -17,6 +17,16 @@ GetRandomShitpost(){
 
     Send, %clipboard%{Enter}
 }
+
+*F6::
+ComObjCreate("SAPI.SpVoice").Speak("Macro Suspenso")
+Suspend, On
+return
+
+*^F6::
+ComObjCreate("SAPI.SpVoice").Speak("Continuando Macro")
+Suspend, Off
+return
 
 ^s::
 GetRandomShitpost()
